@@ -1,0 +1,7 @@
+1.0 Goals 
+=========
+
+library:
+- API-based bugzilla interface, instead of SQL-based one
+- more generic check-specific options handling in medias (don't use a
+specific attribute for each of them)

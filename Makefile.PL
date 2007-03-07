@@ -1,4 +1,4 @@
-# $Id: /mirror/youri/soft/Utils/trunk/Makefile.PL 2232 2007-03-05T21:43:58.415681Z guillomovitch  $
+# $Id: /mirror/youri/soft/Utils/trunk/Makefile.PL 2252 2007-03-07T21:02:21.892421Z guillomovitch  $
 use ExtUtils::MakeMaker;
 use version;
 
@@ -6,6 +6,9 @@ WriteMakefile(
     NAME         => 'Youri::Utils',
     VERSION_FROM => 'lib/Youri/Utils.pm',
     AUTHOR       => 'Youri project <youri@zarb.org>',
+    PREREQ_PM    => {
+        'UNIVERSAL::require' => 0,
+    }
 );
 
 sub MY::postamble {

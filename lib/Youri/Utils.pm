@@ -1,4 +1,4 @@
-# $Id: /mirror/youri/soft/Utils/trunk/lib/Youri/Utils.pm 2246 2007-03-05T22:16:34.639726Z guillomovitch  $
+# $Id: /mirror/youri/soft/Utils/trunk/lib/Youri/Utils.pm 2253 2007-03-07T21:02:32.760773Z guillomovitch  $
 package Youri::Utils;
 
 =head1 NAME
@@ -16,7 +16,7 @@ use warnings;
 use base qw(Exporter);
 use Carp;
 use UNIVERSAL::require;
-use version; our $VERSION = qv('0.1.0');
+use version; our $VERSION = qv('0.1.1');
 
 our @EXPORT = qw(
     create_instance

@@ -1,4 +1,4 @@
-# $Id: /mirror/youri/soft/Utils/trunk/Makefile.PL 2252 2007-03-07T21:02:21.892421Z guillomovitch  $
+# $Id: /mirror/youri/soft/Utils/trunk/Makefile.PL 2333 2007-03-23T08:47:27.597023Z guillomovitch  $
 use ExtUtils::MakeMaker;
 use version;
 
@@ -8,6 +8,8 @@ WriteMakefile(
     AUTHOR       => 'Youri project <youri@zarb.org>',
     PREREQ_PM    => {
         'UNIVERSAL::require' => 0,
+        'DateTime'           => 0,
+        'version'            => 0
     }
 );
 

@@ -1,4 +1,4 @@
-# $Id: /mirror/youri/soft/Utils/trunk/lib/Youri/Utils.pm 2253 2007-03-07T21:02:32.760773Z guillomovitch  $
+# $Id: /mirror/youri/soft/Utils/trunk/lib/Youri/Utils.pm 2334 2007-03-23T08:48:22.544634Z guillomovitch  $
 package Youri::Utils;
 
 =head1 NAME
@@ -15,12 +15,14 @@ use strict;
 use warnings;
 use base qw(Exporter);
 use Carp;
+use DateTime;
+use English qw(-no_match_vars);
 use UNIVERSAL::require;
-use version; our $VERSION = qv('0.1.1');
+use version; our $VERSION = qv('0.2.1');
 
 our @EXPORT = qw(
     create_instance
-    load_class
+    log_message
 );
 
 =head2 create_instance($class, $config, $options)
@@ -58,17 +60,17 @@ sub create_instance {
     );
 }
 
-=head2 load_class($class)
-
-Ensure given class is loaded.
+=head2 log_message($message, $time, $process)
 
 =cut
 
-sub load_class {
-    my ($class) = @_;
-    carp "Deprecated method, use UNIVERSAL::require now";
+sub log_message {
+    my ($message, $time, $process) = @_;
 
-    $class->require();
+    print DateTime->now()->set_time_zone('local')->strftime('[%H:%M:%S] ')
+        if $time;
+    print "$PID " if $process;
+    print "$message\n";
 }
 
 =head1 COPYRIGHT AND LICENSE
